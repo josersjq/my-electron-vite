@@ -1,6 +1,6 @@
 {
   "name": "my-electron-vite",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "An Electron application with React and TypeScript",
   "main": "./out/main/index.js",
   "author": "Jojo San Juan <jojo.sanjuan@mahusai.global>",
