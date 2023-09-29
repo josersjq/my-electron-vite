@@ -25,14 +25,16 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-      - name: build-linux
+      - name: Install Linux Dependencies
         if: matrix.os == 'ubuntu-latest'
         run: |
           sudo apt-get install --no-install-recommends -y gcc-multilib g++-multilib
           sudo apt-get install --no-install-recommends -y libopenjp2-tools
           sudo apt-get install --no-install-recommends -y rpm
-          sudo apt-get install --no-install-recommends -y bsdtar
-          yarn run build:linux
+
+      - name: build-linux
+        if: matrix.os == 'ubuntu-latest'
+        run: yarn run build:linux
 
       - name: build-mac
         if: matrix.os == 'macos-latest'
